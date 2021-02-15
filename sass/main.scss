@@ -10,13 +10,20 @@ html{
 }
 
 header{
-    background: red;
+    background: rgb(255, 255, 255);
     width:100%;
     height:auto;
-    padding:1.5em 0 .5em 0;
+    padding:1em 0 .3em 0;
         #header-wrap{
             display:flex;
             justify-content:space-between;
+            .header-arrow{
+                font-size:1.5em;
+                align-self: center;
+                padding: 0 1em 0 1em;
+                position:absolute;
+                display:none;
+            }
             #logo{
                 font-family:$typo-title;
                 font-size:2em;
@@ -24,3 +31,116 @@ header{
             }
         }
 }
+
+    main{
+        width:100%;
+        height:auto;
+    }
+    #bloc-geoloc{
+        display:flex;
+        background:rgb(187, 187, 187);
+        width:100%;
+    }
+    #geoloc-wrap{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        width:100%;
+            .geoloc__icon{
+                font-size:1.2em;
+                margin:0 .5em 0 0;
+            }
+            p{
+                font-size:1.2em;
+                font-weight:700;
+                letter-spacing: -1px;
+            }
+    }
+
+   #bloc-exploration{
+       display:flex;
+       min-height:300px;
+       background:rgb(216, 216, 216);
+            #explo-wrap{
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                h1{
+                    margin-top: 0;
+                    font-size:1.6em;
+                    font-weight:900;
+                    text-align:center;
+                }
+                p{
+                    margin-top: 0;
+                    font-size:1.2em;
+                    font-weight:300;
+                    text-align:center;
+                }
+                a{
+                    text-align: center;
+                }
+            }
+           
+   }
+
+   #section-tuto{
+       margin-top:4em;
+       background:blue;
+            #tuto-wrap{
+                margin:0 1em 0 1em;
+                display:flex;
+                flex-direction: column;
+                    h2{
+                        font-weight:700;
+                    }
+            }
+   }
+
+   #tuto-articles-wrap{
+       display:flex;
+       justify-content: center;
+       flex-direction: column;
+        .tuto-article{
+            display:flex;
+            background:rgb(201, 233, 170);
+            border-radius:1em;
+            box-shadow: 2px 2px 5px grey;
+            margin:1em 0 1em 0;
+                &__wrap{
+                    display:flex;
+                }
+                &__typo-wrap{
+                    display:flex;
+                    align-content: center;
+                }
+                &__icon{
+                    font-size: 1.2em;
+                    margin:auto 1em auto .5em;
+                }
+                &__number{
+                    display:flex;
+                    margin:auto;
+                    border-radius:100%;
+                    width:1.5em;
+                    height:1.5em;
+                    background:red;
+                    transform: translateX(-12px);
+                        p{
+                            color:white;
+                            margin:auto;
+                        }
+                }
+                
+        }
+   }
+
+   button{
+       font-size:1em;
+       font-weight:700;
+       color:white;
+       background:blue;
+       padding:1.1em;
+       border-radius: 2em;
+       border:none;
+   }

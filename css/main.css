@@ -8,10 +8,10 @@ html {
 }
 
 header {
-  background: red;
+  background: white;
   width: 100%;
   height: auto;
-  padding: 1.5em 0 .5em 0;
+  padding: 1em 0 .3em 0;
 }
 
 header #header-wrap {
@@ -23,9 +23,186 @@ header #header-wrap {
           justify-content: space-between;
 }
 
+header #header-wrap .header-arrow {
+  font-size: 1.5em;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  padding: 0 1em 0 1em;
+  position: absolute;
+  display: none;
+}
+
 header #header-wrap #logo {
   font-family: "Shrikhand";
   font-size: 2em;
   margin: auto;
+}
+
+main {
+  width: 100%;
+  height: auto;
+}
+
+#bloc-geoloc {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: #bbbbbb;
+  width: 100%;
+}
+
+#geoloc-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+#geoloc-wrap .geoloc__icon {
+  font-size: 1.2em;
+  margin: 0 .5em 0 0;
+}
+
+#geoloc-wrap p {
+  font-size: 1.2em;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+#bloc-exploration {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 300px;
+  background: #d8d8d8;
+}
+
+#bloc-exploration #explo-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#bloc-exploration #explo-wrap h1 {
+  margin-top: 0;
+  font-size: 1.6em;
+  font-weight: 900;
+  text-align: center;
+}
+
+#bloc-exploration #explo-wrap p {
+  margin-top: 0;
+  font-size: 1.2em;
+  font-weight: 300;
+  text-align: center;
+}
+
+#bloc-exploration #explo-wrap a {
+  text-align: center;
+}
+
+#section-tuto {
+  margin-top: 4em;
+  background: blue;
+}
+
+#section-tuto #tuto-wrap {
+  margin: 0 1em 0 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#section-tuto #tuto-wrap h2 {
+  font-weight: 700;
+}
+
+#tuto-articles-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#tuto-articles-wrap .tuto-article {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: #c9e9aa;
+  border-radius: 1em;
+  -webkit-box-shadow: 2px 2px 5px grey;
+          box-shadow: 2px 2px 5px grey;
+  margin: 1em 0 1em 0;
+}
+
+#tuto-articles-wrap .tuto-article__wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#tuto-articles-wrap .tuto-article__typo-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+#tuto-articles-wrap .tuto-article__icon {
+  font-size: 1.2em;
+  margin: auto 1em auto .5em;
+}
+
+#tuto-articles-wrap .tuto-article__number {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: auto;
+  border-radius: 100%;
+  width: 1.5em;
+  height: 1.5em;
+  background: red;
+  -webkit-transform: translateX(-12px);
+          transform: translateX(-12px);
+}
+
+#tuto-articles-wrap .tuto-article__number p {
+  color: white;
+  margin: auto;
+}
+
+button {
+  font-size: 1em;
+  font-weight: 700;
+  color: white;
+  background: blue;
+  padding: 1.1em;
+  border-radius: 2em;
+  border: none;
 }
 /*# sourceMappingURL=main.css.map */
