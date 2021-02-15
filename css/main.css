@@ -7,28 +7,25 @@ html {
   font-family: 'Roboto', sans-serif;
 }
 
-body {
-  background: yellow;
+header {
+  background: red;
+  width: 100%;
+  height: auto;
+  padding: 1.5em 0 .5em 0;
 }
 
-.basic-p {
-  font-family: 'Roboto', sans-serif;
-  font-size: 16px;
-  font-weight: 400;
+header #header-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-.basic-p--light {
-  font-weight: 300;
-}
-
-h1 {
-  font-family: 'Shrikhand', sans-serif;
-  font-size: 24px;
-}
-
-h2 {
-  font-family: 'Roboto', sans-serif;
-  font-size: 20px;
-  font-weight: 900;
+header #header-wrap #logo {
+  font-family: "Shrikhand";
+  font-size: 2em;
+  margin: auto;
 }
 /*# sourceMappingURL=main.css.map */

@@ -1,3 +1,5 @@
+$typo-title:'Shrikhand';
+
 body, html{
     margin:0;
     padding:0;
@@ -7,25 +9,18 @@ html{
     font-family: 'Roboto', sans-serif;
 }
 
-body{
-    background:yellow;  
-}
-
-.basic-p{
-    font-family: 'Roboto', sans-serif;
-    font-size:16px;
-    font-weight: 400;
-        &--light{
-            font-weight: 300;
+header{
+    background: red;
+    width:100%;
+    height:auto;
+    padding:1.5em 0 .5em 0;
+        #header-wrap{
+            display:flex;
+            justify-content:space-between;
+            #logo{
+                font-family:$typo-title;
+                font-size:2em;
+                margin:auto;
+            }
         }
-}
-h1{
-    font-family: 'Shrikhand', sans-serif;
-    font-size:24px;
-}
-
-h2{
-    font-family: 'Roboto', sans-serif;
-    font-size:20px;
-    font-weight:900;
 }
