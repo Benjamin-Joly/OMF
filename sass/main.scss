@@ -1,4 +1,5 @@
 $typo-title:'Shrikhand';
+$margin-doc-dimensions:0 2em 0 2em;
 
 body, html{
     margin:0;
@@ -7,6 +8,10 @@ body, html{
 
 html{
     font-family: 'Roboto', sans-serif;
+}
+
+h2{
+    font-weight:900;
 }
 
 header{
@@ -65,6 +70,7 @@ header{
                 display: flex;
                 justify-content: center;
                 flex-direction: column;
+                margin:$margin-doc-dimensions;
                 h1{
                     margin-top: 0;
                     font-size:1.6em;
@@ -73,7 +79,7 @@ header{
                 }
                 p{
                     margin-top: 0;
-                    font-size:1.2em;
+                    font-size:1em;
                     font-weight:300;
                     text-align:center;
                 }
@@ -86,14 +92,12 @@ header{
 
    #section-tuto{
        margin-top:4em;
+       margin-bottom:4em;
        background:blue;
             #tuto-wrap{
-                margin:0 1em 0 1em;
+                margin:$margin-doc-dimensions;
                 display:flex;
                 flex-direction: column;
-                    h2{
-                        font-weight:700;
-                    }
             }
    }
 
@@ -107,15 +111,21 @@ header{
             border-radius:1em;
             box-shadow: 2px 2px 5px grey;
             margin:1em 0 1em 0;
-                &__wrap{
+            padding:.5em 0 .5em 0;
+                &__link{
                     display:flex;
+                    text-decoration: none;
+                    color:black;
+                        p{
+                            font-weight:700;
+                        }
                 }
                 &__typo-wrap{
                     display:flex;
                     align-content: center;
                 }
                 &__icon{
-                    font-size: 1.2em;
+                    font-size: 1.4em;
                     margin:auto 1em auto .5em;
                 }
                 &__number{
@@ -129,11 +139,88 @@ header{
                         p{
                             color:white;
                             margin:auto;
+                            font-weight:400;
                         }
                 }
                 
         }
    }
+
+   #section-restaurant{
+       background:yellow;
+       width:100%;
+       height:auto;
+        #restaurant-wrap{
+            display:flex;
+            flex-direction: column;
+            margin:$margin-doc-dimensions;
+        }
+   }
+
+   #restaurant-article-wrap{
+       width:100%;
+   }
+
+   .restaurant-article{
+       width:100%;
+       margin-bottom:2em;
+       border-top-right-radius: 1.5em;
+       border-top-left-radius: 1.5em;
+       background: #fff;
+       overflow: hidden;
+        &__link{
+            text-decoration:none;
+            color:black;
+        }
+        &__img{
+            width:100%;
+            max-height:170px;
+            object-fit: cover;
+        }
+        &__typo-wrap{
+            display:flex;
+        }
+        &__typo-link{
+            margin:1em;
+            flex:2;
+                h3, p{
+                    margin:0;
+                }
+        }
+        &__icon{
+            flex:1;
+            text-align: center;
+            align-self: center;
+            font-size:1.5em;
+            background:red;
+        }
+   }
+
+    #logo-footer{
+        font-family:$typo-title;
+                    font-size:1.2em;
+                    margin-bottom:1em;
+    }
+
+    .footer-content{
+        margin:1em;
+            p{
+                margin:0;
+
+            }
+            a{
+                margin-bottom:.5em;
+                text-decoration: none;
+                color:black;
+            }
+            &__link{
+                display:flex;
+                font-weight: 700;
+            }
+            &__icon{
+                margin:auto .5em auto 0;
+            }
+    }
 
    button{
        font-size:1em;

@@ -7,6 +7,10 @@ html {
   font-family: 'Roboto', sans-serif;
 }
 
+h2 {
+  font-weight: 900;
+}
+
 header {
   background: white;
   width: 100%;
@@ -95,6 +99,7 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  margin: 0 2em 0 2em;
 }
 
 #bloc-exploration #explo-wrap h1 {
@@ -106,7 +111,7 @@ main {
 
 #bloc-exploration #explo-wrap p {
   margin-top: 0;
-  font-size: 1.2em;
+  font-size: 1em;
   font-weight: 300;
   text-align: center;
 }
@@ -117,11 +122,12 @@ main {
 
 #section-tuto {
   margin-top: 4em;
+  margin-bottom: 4em;
   background: blue;
 }
 
 #section-tuto #tuto-wrap {
-  margin: 0 1em 0 1em;
+  margin: 0 2em 0 2em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -129,10 +135,6 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-}
-
-#section-tuto #tuto-wrap h2 {
-  font-weight: 700;
 }
 
 #tuto-articles-wrap {
@@ -157,12 +159,19 @@ main {
   -webkit-box-shadow: 2px 2px 5px grey;
           box-shadow: 2px 2px 5px grey;
   margin: 1em 0 1em 0;
+  padding: .5em 0 .5em 0;
 }
 
-#tuto-articles-wrap .tuto-article__wrap {
+#tuto-articles-wrap .tuto-article__link {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  text-decoration: none;
+  color: black;
+}
+
+#tuto-articles-wrap .tuto-article__link p {
+  font-weight: 700;
 }
 
 #tuto-articles-wrap .tuto-article__typo-wrap {
@@ -174,7 +183,7 @@ main {
 }
 
 #tuto-articles-wrap .tuto-article__icon {
-  font-size: 1.2em;
+  font-size: 1.4em;
   margin: auto 1em auto .5em;
 }
 
@@ -194,6 +203,109 @@ main {
 #tuto-articles-wrap .tuto-article__number p {
   color: white;
   margin: auto;
+  font-weight: 400;
+}
+
+#section-restaurant {
+  background: yellow;
+  width: 100%;
+  height: auto;
+}
+
+#section-restaurant #restaurant-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0 2em 0 2em;
+}
+
+#restaurant-article-wrap {
+  width: 100%;
+}
+
+.restaurant-article {
+  width: 100%;
+  margin-bottom: 2em;
+  border-top-right-radius: 1.5em;
+  border-top-left-radius: 1.5em;
+  background: #fff;
+  overflow: hidden;
+}
+
+.restaurant-article__link {
+  text-decoration: none;
+  color: black;
+}
+
+.restaurant-article__img {
+  width: 100%;
+  max-height: 170px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.restaurant-article__typo-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.restaurant-article__typo-link {
+  margin: 1em;
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+}
+
+.restaurant-article__typo-link h3, .restaurant-article__typo-link p {
+  margin: 0;
+}
+
+.restaurant-article__icon {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  text-align: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  font-size: 1.5em;
+  background: red;
+}
+
+#logo-footer {
+  font-family: "Shrikhand";
+  font-size: 1.2em;
+  margin-bottom: 1em;
+}
+
+.footer-content {
+  margin: 1em;
+}
+
+.footer-content p {
+  margin: 0;
+}
+
+.footer-content a {
+  margin-bottom: .5em;
+  text-decoration: none;
+  color: black;
+}
+
+.footer-content__link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: 700;
+}
+
+.footer-content__icon {
+  margin: auto .5em auto 0;
 }
 
 button {
