@@ -1,0 +1,13 @@
+$typo-title:'Shrikhand';
+$margin-doc-dimensions:0 1.5em 0 1.5em;
+$typo-color:rgb(0, 0, 0);
+$typo-color-light:lighten($typo-color,30%);
+$head-info-color:lighten($typo-color,90%);
+$bg-color:lighten($typo-color, 95%);
+$cta-color:#9356dc;
+$cta-color-light:#ff79da;
+$contrast-color:#99e2d0;
+
+@mixin box-shadow-settings{
+    box-shadow: 0 .2em 1em darken($head-info-color,5%);
+}

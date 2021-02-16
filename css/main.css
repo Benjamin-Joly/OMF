@@ -94,6 +94,28 @@ main {
   background: #f2f2f2;
 }
 
+@media (min-width: 1000px) {
+  #bloc-exploration {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[12];
+        grid-template-columns: repeat(12, 1fr);
+    -ms-grid-rows: (1fr)[4];
+        grid-template-rows: repeat(4, 1fr);
+    height: 90vh;
+    background-image: url("/ressources/images/restaurants/la-palette-du-gout_jay-wennington-N_Y88TWmGwA-unsplash.jpg");
+    background-color: #666666;
+    background-blend-mode: lighten;
+    background-size: cover;
+  }
+}
+
+@media (min-width: 1000px) and (max-width: 1025px) {
+  #bloc-exploration {
+    height: 30vh;
+  }
+}
+
 #bloc-exploration #explo-wrap {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -108,11 +130,37 @@ main {
   margin: 0 1.5em 0 1.5em;
 }
 
+@media (min-width: 1000px) {
+  #bloc-exploration #explo-wrap {
+    -ms-grid-column: 8;
+    -ms-grid-column-span: 4;
+    grid-column: 8/12;
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    grid-row: 3/4;
+    background: #f2f2f2;
+    border-radius: 1.5em;
+    padding: 2em;
+  }
+}
+
+@media (max-width: 999px) {
+  #bloc-exploration #explo-wrap {
+    margin: auto;
+  }
+}
+
 #bloc-exploration #explo-wrap h1 {
   margin-top: 0;
   font-size: 1.6em;
   font-weight: 900;
   text-align: center;
+}
+
+@media (min-width: 1000px) {
+  #bloc-exploration #explo-wrap h1 {
+    text-align: left;
+  }
 }
 
 #bloc-exploration #explo-wrap p {
@@ -122,13 +170,48 @@ main {
   text-align: center;
 }
 
+@media (min-width: 1000px) {
+  #bloc-exploration #explo-wrap p {
+    text-align: left;
+  }
+}
+
 #bloc-exploration #explo-wrap a {
   text-align: center;
+}
+
+@media (min-width: 1000px) {
+  #bloc-exploration #explo-wrap a {
+    text-align: left;
+  }
+}
+
+@media (min-width: 1000px) {
+  #bloc-exploration #explo-wrap br {
+    display: none;
+  }
 }
 
 #section-tuto {
   margin-top: 4em;
   margin-bottom: 4em;
+}
+
+@media (min-width: 1000px) {
+  #section-tuto {
+    height: 50vh;
+    background: linear-gradient(45deg, #99e2d0 1%, #fff 1%, #fff 49%, #99e2d0 49%, #99e2d0 51%, #fff 51%, #fff 99%, #99e2d0 99%);
+    background-size: 6px 6px;
+    background-position: 50px 50px;
+    margin: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
 #section-tuto #tuto-wrap {
@@ -140,6 +223,13 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+@media (min-width: 500px) {
+  #section-tuto #tuto-wrap {
+    min-width: 500px;
+    margin: auto;
+  }
 }
 
 #tuto-articles-wrap {
@@ -237,18 +327,40 @@ main {
   margin: 0 1.5em 0 1.5em;
 }
 
-#restaurant-article-wrap {
-  width: 100%;
+@media (min-width: 1000px) {
+  #restaurant-articles-wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin-bottom: 3em;
+  }
 }
 
 .restaurant-article {
   width: 100%;
+  margin: auto;
   margin-bottom: 2em;
   border-radius: 1.5em;
   background: #fff;
   -webkit-box-shadow: 0 0.2em 1em #d9d9d9;
           box-shadow: 0 0.2em 1em #d9d9d9;
   overflow: hidden;
+  max-width: 400px;
+}
+
+@media (min-width: 1000px) {
+  .restaurant-article {
+    margin: 1em;
+  }
 }
 
 .restaurant-article__link {
@@ -345,6 +457,10 @@ footer {
 #icon-rotate {
   -webkit-transform: rotate(-30deg);
           transform: rotate(-30deg);
+}
+
+.inactive {
+  display: none;
 }
 
 button {
