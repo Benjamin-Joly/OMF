@@ -1,5 +1,17 @@
 $typo-title:'Shrikhand';
-$margin-doc-dimensions:0 2em 0 2em;
+$margin-doc-dimensions:0 1.5em 0 1.5em;
+$typo-color:rgb(0, 0, 0);
+$typo-color-light:lighten($typo-color,30%);
+$head-info-color:lighten($typo-color,90%);
+$bg-color:lighten($typo-color, 95%);
+$cta-color:#9356dc;
+$cta-color-light:#ff79da;
+$contrast-color:#99e2d0;
+
+@mixin box-shadow-settings{
+    box-shadow: 0 .2em 1em darken($head-info-color,5%);
+}
+
 
 body, html{
     margin:0;
@@ -8,6 +20,7 @@ body, html{
 
 html{
     font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth;
 }
 
 h2{
@@ -19,6 +32,9 @@ header{
     width:100%;
     height:auto;
     padding:1em 0 .3em 0;
+    position:relative;
+    z-index:10;
+    box-shadow: 0 1px 5px lighten($typo-color-light,40%);
         #header-wrap{
             display:flex;
             justify-content:space-between;
@@ -43,7 +59,7 @@ header{
     }
     #bloc-geoloc{
         display:flex;
-        background:rgb(187, 187, 187);
+        background:$head-info-color;
         width:100%;
     }
     #geoloc-wrap{
@@ -51,12 +67,13 @@ header{
         justify-content: center;
         align-items: center;
         width:100%;
+        color:darken($typo-color-light, 5%);
             .geoloc__icon{
-                font-size:1.2em;
+                font-size:1em;
                 margin:0 .5em 0 0;
             }
             p{
-                font-size:1.2em;
+                font-size:1em;
                 font-weight:700;
                 letter-spacing: -1px;
             }
@@ -65,7 +82,7 @@ header{
    #bloc-exploration{
        display:flex;
        min-height:300px;
-       background:rgb(216, 216, 216);
+       background:$bg-color;
             #explo-wrap{
                 display: flex;
                 justify-content: center;
@@ -79,7 +96,7 @@ header{
                 }
                 p{
                     margin-top: 0;
-                    font-size:1em;
+                    font-size:1.2em;
                     font-weight:300;
                     text-align:center;
                 }
@@ -93,7 +110,6 @@ header{
    #section-tuto{
        margin-top:4em;
        margin-bottom:4em;
-       background:blue;
             #tuto-wrap{
                 margin:$margin-doc-dimensions;
                 display:flex;
@@ -107,15 +123,15 @@ header{
        flex-direction: column;
         .tuto-article{
             display:flex;
-            background:rgb(201, 233, 170);
+            background:$bg-color;
             border-radius:1em;
-            box-shadow: 2px 2px 5px grey;
+            @include box-shadow-settings;
             margin:1em 0 1em 0;
             padding:.5em 0 .5em 0;
                 &__link{
                     display:flex;
                     text-decoration: none;
-                    color:black;
+                    color:$typo-color;
                         p{
                             font-weight:700;
                         }
@@ -125,8 +141,9 @@ header{
                     align-content: center;
                 }
                 &__icon{
-                    font-size: 1.4em;
+                    font-size: 1.2em;
                     margin:auto 1em auto .5em;
+                    color:$typo-color-light;
                 }
                 &__number{
                     display:flex;
@@ -134,7 +151,7 @@ header{
                     border-radius:100%;
                     width:1.5em;
                     height:1.5em;
-                    background:red;
+                    background:$cta-color;
                     transform: translateX(-12px);
                         p{
                             color:white;
@@ -142,12 +159,18 @@ header{
                             font-weight:400;
                         }
                 }
+                &:hover{
+                    background: lighten($cta-color, 35%);
+                }
+                &:hover .tuto-article__icon{
+                   color: $cta-color;
+                }
                 
         }
    }
 
    #section-restaurant{
-       background:yellow;
+       background:$bg-color;
        width:100%;
        height:auto;
         #restaurant-wrap{
@@ -164,13 +187,14 @@ header{
    .restaurant-article{
        width:100%;
        margin-bottom:2em;
-       border-top-right-radius: 1.5em;
-       border-top-left-radius: 1.5em;
+       border-radius:1.5em;
        background: #fff;
+       @include box-shadow-settings;
        overflow: hidden;
         &__link{
             text-decoration:none;
-            color:black;
+            color:$typo-color;
+            position:relative;
         }
         &__img{
             width:100%;
@@ -194,6 +218,20 @@ header{
             font-size:1.5em;
             background:red;
         }
+        &__new{
+            font-size:.9em;
+            font-weight:700;
+            background: $contrast-color;
+            color:darken($contrast-color, 40%);
+            padding:.5em;
+            border-radius: .2em;
+            position:absolute;
+            right:1em;
+        }
+   }
+
+   footer{
+    background:darken($typo-color-light, 5%);
    }
 
     #logo-footer{
@@ -203,7 +241,9 @@ header{
     }
 
     .footer-content{
-        margin:1em;
+        margin:0;
+        padding:2em;
+        color:$bg-color;
             p{
                 margin:0;
 
@@ -211,22 +251,27 @@ header{
             a{
                 margin-bottom:.5em;
                 text-decoration: none;
-                color:black;
+                color:$bg-color;
             }
             &__link{
                 display:flex;
                 font-weight: 700;
             }
             &__icon{
+                width:1.2em;
                 margin:auto .5em auto 0;
             }
+    }
+
+    #icon-rotate{
+        transform: rotate(-30deg);
     }
 
    button{
        font-size:1em;
        font-weight:700;
        color:white;
-       background:blue;
+       background:linear-gradient($cta-color-light, $cta-color);
        padding:1.1em;
        border-radius: 2em;
        border:none;

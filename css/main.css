@@ -5,6 +5,7 @@ body, html {
 
 html {
   font-family: 'Roboto', sans-serif;
+  scroll-behavior: smooth;
 }
 
 h2 {
@@ -16,6 +17,10 @@ header {
   width: 100%;
   height: auto;
   padding: 1em 0 .3em 0;
+  position: relative;
+  z-index: 10;
+  -webkit-box-shadow: 0 1px 5px #b3b3b3;
+          box-shadow: 0 1px 5px #b3b3b3;
 }
 
 header #header-wrap {
@@ -52,7 +57,7 @@ main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background: #bbbbbb;
+  background: #e6e6e6;
   width: 100%;
 }
 
@@ -67,15 +72,16 @@ main {
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
+  color: #404040;
 }
 
 #geoloc-wrap .geoloc__icon {
-  font-size: 1.2em;
+  font-size: 1em;
   margin: 0 .5em 0 0;
 }
 
 #geoloc-wrap p {
-  font-size: 1.2em;
+  font-size: 1em;
   font-weight: 700;
   letter-spacing: -1px;
 }
@@ -85,7 +91,7 @@ main {
   display: -ms-flexbox;
   display: flex;
   min-height: 300px;
-  background: #d8d8d8;
+  background: #f2f2f2;
 }
 
 #bloc-exploration #explo-wrap {
@@ -99,7 +105,7 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin: 0 2em 0 2em;
+  margin: 0 1.5em 0 1.5em;
 }
 
 #bloc-exploration #explo-wrap h1 {
@@ -111,7 +117,7 @@ main {
 
 #bloc-exploration #explo-wrap p {
   margin-top: 0;
-  font-size: 1em;
+  font-size: 1.2em;
   font-weight: 300;
   text-align: center;
 }
@@ -123,11 +129,10 @@ main {
 #section-tuto {
   margin-top: 4em;
   margin-bottom: 4em;
-  background: blue;
 }
 
 #section-tuto #tuto-wrap {
-  margin: 0 2em 0 2em;
+  margin: 0 1.5em 0 1.5em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -154,10 +159,10 @@ main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background: #c9e9aa;
+  background: #f2f2f2;
   border-radius: 1em;
-  -webkit-box-shadow: 2px 2px 5px grey;
-          box-shadow: 2px 2px 5px grey;
+  -webkit-box-shadow: 0 0.2em 1em #d9d9d9;
+          box-shadow: 0 0.2em 1em #d9d9d9;
   margin: 1em 0 1em 0;
   padding: .5em 0 .5em 0;
 }
@@ -183,8 +188,9 @@ main {
 }
 
 #tuto-articles-wrap .tuto-article__icon {
-  font-size: 1.4em;
+  font-size: 1.2em;
   margin: auto 1em auto .5em;
+  color: #4d4d4d;
 }
 
 #tuto-articles-wrap .tuto-article__number {
@@ -195,7 +201,7 @@ main {
   border-radius: 100%;
   width: 1.5em;
   height: 1.5em;
-  background: red;
+  background: #9356dc;
   -webkit-transform: translateX(-12px);
           transform: translateX(-12px);
 }
@@ -206,8 +212,16 @@ main {
   font-weight: 400;
 }
 
+#tuto-articles-wrap .tuto-article:hover {
+  background: #f2eafb;
+}
+
+#tuto-articles-wrap .tuto-article:hover .tuto-article__icon {
+  color: #9356dc;
+}
+
 #section-restaurant {
-  background: yellow;
+  background: #f2f2f2;
   width: 100%;
   height: auto;
 }
@@ -220,7 +234,7 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin: 0 2em 0 2em;
+  margin: 0 1.5em 0 1.5em;
 }
 
 #restaurant-article-wrap {
@@ -230,15 +244,17 @@ main {
 .restaurant-article {
   width: 100%;
   margin-bottom: 2em;
-  border-top-right-radius: 1.5em;
-  border-top-left-radius: 1.5em;
+  border-radius: 1.5em;
   background: #fff;
+  -webkit-box-shadow: 0 0.2em 1em #d9d9d9;
+          box-shadow: 0 0.2em 1em #d9d9d9;
   overflow: hidden;
 }
 
 .restaurant-article__link {
   text-decoration: none;
   color: black;
+  position: relative;
 }
 
 .restaurant-article__img {
@@ -277,6 +293,21 @@ main {
   background: red;
 }
 
+.restaurant-article__new {
+  font-size: .9em;
+  font-weight: 700;
+  background: #99e2d0;
+  color: #278870;
+  padding: .5em;
+  border-radius: .2em;
+  position: absolute;
+  right: 1em;
+}
+
+footer {
+  background: #404040;
+}
+
 #logo-footer {
   font-family: "Shrikhand";
   font-size: 1.2em;
@@ -284,7 +315,9 @@ main {
 }
 
 .footer-content {
-  margin: 1em;
+  margin: 0;
+  padding: 2em;
+  color: #f2f2f2;
 }
 
 .footer-content p {
@@ -294,7 +327,7 @@ main {
 .footer-content a {
   margin-bottom: .5em;
   text-decoration: none;
-  color: black;
+  color: #f2f2f2;
 }
 
 .footer-content__link {
@@ -305,14 +338,21 @@ main {
 }
 
 .footer-content__icon {
+  width: 1.2em;
   margin: auto .5em auto 0;
+}
+
+#icon-rotate {
+  -webkit-transform: rotate(-30deg);
+          transform: rotate(-30deg);
 }
 
 button {
   font-size: 1em;
   font-weight: 700;
   color: white;
-  background: blue;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ff79da), to(#9356dc));
+  background: linear-gradient(#ff79da, #9356dc);
   padding: 1.1em;
   border-radius: 2em;
   border: none;
