@@ -39,13 +39,19 @@ header #header-wrap .header-arrow {
       align-self: center;
   padding: 0 1em 0 1em;
   position: absolute;
-  display: none;
+  -webkit-transform: translateY(10px);
+          transform: translateY(10px);
 }
 
 header #header-wrap #logo {
   font-family: "Shrikhand";
   font-size: 2em;
   margin: auto;
+}
+
+#header-arrow {
+  text-decoration: none;
+  color: black;
 }
 
 footer {
@@ -576,6 +582,11 @@ main {
           transform: scale(1.05);
 }
 
+.restaurant-article:hover .restaurant-article__bg-icon {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
 @media (min-width: 1000px) {
   .restaurant-article {
     margin: 1em;
@@ -610,6 +621,23 @@ main {
 
 .restaurant-article__typo-link h3, .restaurant-article__typo-link p {
   margin: 0;
+}
+
+.restaurant-article__bg-icon {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ff79da), to(#9356dc));
+  background: linear-gradient(#ff79da, #9356dc);
+  margin-right: 1.5em;
+  width: 60px;
+  height: 60px;
+  -webkit-clip-path: circle();
+          clip-path: circle();
+  -webkit-transform: scale(0.5) translateY(100px);
+          transform: scale(0.5) translateY(100px);
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
 }
 
 .restaurant-article__icon {

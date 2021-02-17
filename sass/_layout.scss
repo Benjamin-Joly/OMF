@@ -14,7 +14,7 @@ header{
                 align-self: center;
                 padding: 0 1em 0 1em;
                 position:absolute;
-                display:none;
+                transform: translateY(10px);
             }
             #logo{
                 font-family:$typo-title;
@@ -22,6 +22,11 @@ header{
                 margin:auto;
             }
         }
+}
+
+#header-arrow{
+    text-decoration:none;
+    color:black;
 }
 
 footer{

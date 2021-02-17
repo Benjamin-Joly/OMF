@@ -264,6 +264,9 @@
             &:hover{
                 transform: scale(1.05);
             }
+            &:hover .restaurant-article__bg-icon{
+                transform: scale(1);
+            }
             @media (min-width:1000px){
                 margin:1em;
             }
@@ -286,6 +289,16 @@
                 h3, p{
                     margin:0;
                 }
+        }
+        &__bg-icon{
+            align-self: center;
+            background:$gradient-cta;
+            margin-right:1.5em;
+            width:60px;
+            height:60px;
+            clip-path: circle();
+            transform: scale(0.5) translateY(100px);
+            @include transition-settings; 
         }
         &__icon{
             flex:1;
