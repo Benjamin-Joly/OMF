@@ -1,3 +1,7 @@
+.inactive {
+  display: none;
+}
+
 body, html {
   margin: 0;
   padding: 0;
@@ -6,10 +10,6 @@ body, html {
 html {
   font-family: 'Roboto', sans-serif;
   scroll-behavior: smooth;
-}
-
-h2 {
-  font-weight: 900;
 }
 
 header {
@@ -46,6 +46,104 @@ header #header-wrap #logo {
   font-family: "Shrikhand";
   font-size: 2em;
   margin: auto;
+}
+
+footer {
+  background: #404040;
+}
+
+#logo-footer {
+  font-family: "Shrikhand";
+  font-size: 1.2em;
+  margin-bottom: 1em;
+}
+
+@media (min-width: 1000px) {
+  #logo-footer {
+    font-size: 2em;
+    margin: 0;
+  }
+}
+
+#logo-footer:hover {
+  cursor: pointer;
+}
+
+.footer-content {
+  margin: 0;
+  padding: 2em;
+  color: #f2f2f2;
+}
+
+@media (min-width: 1000px) {
+  .footer-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+    max-width: 900px;
+    height: 150px;
+  }
+}
+
+.footer-content p {
+  margin: 0;
+}
+
+.footer-content a {
+  margin-bottom: .5em;
+  text-decoration: none;
+  color: #f2f2f2;
+}
+
+@media (min-width: 1000px) {
+  .footer-content a {
+    margin-top: 1em;
+  }
+}
+
+.footer-content__link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: 700;
+}
+
+.footer-content__icon {
+  width: 1.2em;
+  margin: auto .5em auto 0;
+}
+
+#icon-rotate {
+  -webkit-transform: rotate(-30deg);
+          transform: rotate(-30deg);
+}
+
+button {
+  font-size: 1em;
+  font-weight: 700;
+  color: white;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ff79da), to(#9356dc));
+  background: linear-gradient(#ff79da, #9356dc);
+  padding: 1.1em;
+  border-radius: 2em;
+  border: none;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+h2 {
+  font-weight: 900;
 }
 
 main {
@@ -110,9 +208,15 @@ main {
   }
 }
 
-@media (min-width: 1000px) and (max-width: 1025px) {
+@media (min-width: 1000px) and (max-width: 1200px) {
   #bloc-exploration {
-    height: 30vh;
+    height: 50vh;
+  }
+}
+
+@media (min-width: 1200px) {
+  #bloc-exploration {
+    height: 90vh;
   }
 }
 
@@ -199,7 +303,6 @@ main {
 
 @media (min-width: 1000px) {
   #section-tuto {
-    height: 50vh;
     background: linear-gradient(45deg, #99e2d0 1%, #fff 1%, #fff 49%, #99e2d0 49%, #99e2d0 51%, #fff 51%, #fff 99%, #99e2d0 99%);
     background-size: 6px 6px;
     background-position: 50px 50px;
@@ -214,6 +317,18 @@ main {
   }
 }
 
+@media (min-width: 1000px) and (max-width: 1200px) {
+  #section-tuto {
+    height: 50vh;
+  }
+}
+
+@media (min-width: 1200px) {
+  #section-tuto {
+    height: 70vh;
+  }
+}
+
 #section-tuto #tuto-wrap {
   margin: 0 1.5em 0 1.5em;
   display: -webkit-box;
@@ -225,9 +340,18 @@ main {
           flex-direction: column;
 }
 
-@media (min-width: 500px) {
+@media (min-width: 500px) and (max-width: 999px) {
   #section-tuto #tuto-wrap {
-    min-width: 500px;
+    width: 80%;
+    max-width: 500px;
+    margin: auto;
+  }
+}
+
+@media (min-width: 1000px) {
+  #section-tuto #tuto-wrap {
+    width: 80%;
+    max-width: 1000px;
     margin: auto;
   }
 }
@@ -245,6 +369,19 @@ main {
           flex-direction: column;
 }
 
+@media (min-width: 1000px) {
+  #tuto-articles-wrap {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin-top: 2em;
+  }
+}
+
 #tuto-articles-wrap .tuto-article {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -255,6 +392,17 @@ main {
           box-shadow: 0 0.2em 1em #d9d9d9;
   margin: 1em 0 1em 0;
   padding: .5em 0 .5em 0;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+@media (min-width: 1000px) {
+  #tuto-articles-wrap .tuto-article:hover .tuto-article__number {
+    -webkit-transform-origin: center;
+            transform-origin: center;
+    -webkit-transform: translateX(0) translateY(-55px) scale(1.5);
+            transform: translateX(0) translateY(-55px) scale(1.5);
+  }
 }
 
 #tuto-articles-wrap .tuto-article__link {
@@ -263,6 +411,19 @@ main {
   display: flex;
   text-decoration: none;
   color: black;
+}
+
+@media (min-width: 1000px) {
+  #tuto-articles-wrap .tuto-article__link {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding: 2em;
+  }
 }
 
 #tuto-articles-wrap .tuto-article__link p {
@@ -283,6 +444,13 @@ main {
   color: #4d4d4d;
 }
 
+@media (min-width: 1000px) {
+  #tuto-articles-wrap .tuto-article__icon {
+    margin: 0 auto 0 auto;
+    font-size: 1.5em;
+  }
+}
+
 #tuto-articles-wrap .tuto-article__number {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -294,6 +462,15 @@ main {
   background: #9356dc;
   -webkit-transform: translateX(-12px);
           transform: translateX(-12px);
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+@media (min-width: 1000px) {
+  #tuto-articles-wrap .tuto-article__number {
+    -webkit-transform: translateX(0) translateY(-50px) scale(1.2);
+            transform: translateX(0) translateY(-50px) scale(1.2);
+  }
 }
 
 #tuto-articles-wrap .tuto-article__number p {
@@ -327,7 +504,42 @@ main {
   margin: 0 1.5em 0 1.5em;
 }
 
+@media (min-width: 500px) and (max-width: 999px) {
+  #section-restaurant #restaurant-wrap {
+    width: 80%;
+    max-width: 500px;
+    margin: auto;
+  }
+}
+
 @media (min-width: 1000px) {
+  #section-restaurant #restaurant-wrap {
+    width: 80%;
+    margin: auto;
+  }
+}
+
+#restaurant-articles-wrap {
+  width: 100%;
+}
+
+@media (min-width: 1000px) {
+  #restaurant-articles-wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin: auto auto 4em auto;
+  }
+}
+
+@media (min-width: 500px) and (max-width: 999px) {
   #restaurant-articles-wrap {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -341,12 +553,13 @@ main {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    margin-bottom: 3em;
+    margin: auto;
   }
 }
 
 .restaurant-article {
   width: 100%;
+  max-width: 400px;
   margin: auto;
   margin-bottom: 2em;
   border-radius: 1.5em;
@@ -354,7 +567,13 @@ main {
   -webkit-box-shadow: 0 0.2em 1em #d9d9d9;
           box-shadow: 0 0.2em 1em #d9d9d9;
   overflow: hidden;
-  max-width: 400px;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.restaurant-article:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 @media (min-width: 1000px) {
@@ -371,7 +590,7 @@ main {
 
 .restaurant-article__img {
   width: 100%;
-  max-height: 170px;
+  height: 170px;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -402,7 +621,21 @@ main {
       -ms-grid-row-align: center;
       align-self: center;
   font-size: 1.5em;
-  background: red;
+  color: white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.restaurant-article__icon:hover {
+  background: -webkit-gradient(linear, left top, left bottom, from(#ff79da), to(#9356dc));
+  background: linear-gradient(#ff79da, #9356dc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
 }
 
 .restaurant-article__new {
@@ -415,62 +648,4 @@ main {
   position: absolute;
   right: 1em;
 }
-
-footer {
-  background: #404040;
-}
-
-#logo-footer {
-  font-family: "Shrikhand";
-  font-size: 1.2em;
-  margin-bottom: 1em;
-}
-
-.footer-content {
-  margin: 0;
-  padding: 2em;
-  color: #f2f2f2;
-}
-
-.footer-content p {
-  margin: 0;
-}
-
-.footer-content a {
-  margin-bottom: .5em;
-  text-decoration: none;
-  color: #f2f2f2;
-}
-
-.footer-content__link {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  font-weight: 700;
-}
-
-.footer-content__icon {
-  width: 1.2em;
-  margin: auto .5em auto 0;
-}
-
-#icon-rotate {
-  -webkit-transform: rotate(-30deg);
-          transform: rotate(-30deg);
-}
-
-.inactive {
-  display: none;
-}
-
-button {
-  font-size: 1em;
-  font-weight: 700;
-  color: white;
-  background: -webkit-gradient(linear, left top, left bottom, from(#ff79da), to(#9356dc));
-  background: linear-gradient(#ff79da, #9356dc);
-  padding: 1.1em;
-  border-radius: 2em;
-  border: none;
-}
-/*# sourceMappingURL=main.css.map */
+/*# sourceMappingURL=main__home.css.map */

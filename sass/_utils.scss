@@ -7,7 +7,17 @@ $bg-color:lighten($typo-color, 95%);
 $cta-color:#9356dc;
 $cta-color-light:#ff79da;
 $contrast-color:#99e2d0;
+$pattern-tuto:linear-gradient(45deg, $contrast-color 1%, #fff 1%, #fff 49%, $contrast-color 49%, $contrast-color 51%, #fff 51%, #fff 99%, $contrast-color 99%);
+$gradient-cta:linear-gradient($cta-color-light, $cta-color);
+.inactive{
+    display:none;
+}
+
 
 @mixin box-shadow-settings{
     box-shadow: 0 .2em 1em darken($head-info-color,5%);
+}
+
+@mixin transition-settings{
+    transition: all .2s ease-in-out; 
 }

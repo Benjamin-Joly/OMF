@@ -1,44 +1,12 @@
 @import '_utils.scss';
+@import '_base.scss';
+@import '_layout.scss';
 
-body, html{
-    margin:0;
-    padding:0;
-}
+///////////////////////////////////////////////règleHome
 
-html{
-    font-family: 'Roboto', sans-serif;
-    scroll-behavior: smooth;
-}
-
-h2{
-    font-weight:900;
-}
-
-header{
-    background: rgb(255, 255, 255);
-    width:100%;
-    height:auto;
-    padding:1em 0 .3em 0;
-    position:relative;
-    z-index:10;
-    box-shadow: 0 1px 5px lighten($typo-color-light,40%);
-        #header-wrap{
-            display:flex;
-            justify-content:space-between;
-            .header-arrow{
-                font-size:1.5em;
-                align-self: center;
-                padding: 0 1em 0 1em;
-                position:absolute;
-                display:none;
-            }
-            #logo{
-                font-family:$typo-title;
-                font-size:2em;
-                margin:auto;
-            }
-        }
-}
+    h2{
+        font-weight:900;
+    }
 
     main{
         width:100%;
@@ -67,21 +35,24 @@ header{
     }
 
    #bloc-exploration{
-       display:flex;
-       min-height:300px;
-       background:$bg-color;
-            @media (min-width:1000px) {
-                display:grid;
+       display: flex;
+       min-height: 300px;
+       background: $bg-color;
+            @media (min-width:1000px){
+                display: grid;
                 grid-template-columns: repeat(12, 1fr);
                 grid-template-rows: repeat(4, 1fr);
-                height:90vh;   
+                height: 90vh;   
                 background-image: url('/ressources/images/restaurants/la-palette-du-gout_jay-wennington-N_Y88TWmGwA-unsplash.jpg');
                 background-color: lighten($typo-color-light,10%);
-                background-blend-mode:lighten;
+                background-blend-mode: lighten;
                 background-size: cover;
             }
-            @media (min-width:1000px) and (max-width:1025px){
-                height:30vh;   
+            @media (min-width:1000px) and (max-width:1200px){
+                height: 50vh;   
+            }
+            @media (min-width:1200px){
+                height: 90vh;   
             }
             #explo-wrap{
                 display: flex;
@@ -135,20 +106,31 @@ header{
        margin-top:4em;
        margin-bottom:4em;
             @media (min-width:1000px){
-                height:50vh;
-                background: linear-gradient(45deg, $contrast-color 1%, #fff 1%, #fff 49%, $contrast-color 49%, $contrast-color 51%, #fff 51%, #fff 99%, $contrast-color 99%);
+                background: $pattern-tuto;
                 background-size: 6px 6px;
                 background-position: 50px 50px;
                 margin:auto;
                 display:flex;
                 flex-direction: column;
             }
+            @media (min-width:1000px) and (max-width:1200px){
+                height: 50vh;   
+            }
+            @media (min-width:1200px){
+                height: 70vh;   
+            }
             #tuto-wrap{
                 margin:$margin-doc-dimensions;
                 display:flex;
                 flex-direction: column;
-                        @media (min-width:500px) {
-                            min-width:500px;
+                        @media (min-width:500px) and (max-width:999px) {
+                            width:80%;
+                            max-width:500px;
+                            margin:auto;
+                        }
+                        @media (min-width:1000px) {
+                            width:80%;
+                            max-width:1000px;
                             margin:auto;
                         }
             }
@@ -158,6 +140,11 @@ header{
        display:flex;
        justify-content: center;
        flex-direction: column;
+            @media (min-width:1000px){
+                flex-direction: row;
+                justify-content: space-between;
+                margin-top:2em;
+            }
         .tuto-article{
             display:flex;
             background:$bg-color;
@@ -165,10 +152,22 @@ header{
             @include box-shadow-settings;
             margin:1em 0 1em 0;
             padding:.5em 0 .5em 0;
+            @include transition-settings;
+            @media (min-width:1000px){
+                &:hover .tuto-article__number{
+                    transform-origin: center;
+                    transform: translateX(0) translateY(-55px) scale(1.5);
+                } 
+            }         
                 &__link{
                     display:flex;
                     text-decoration: none;
                     color:$typo-color;
+                            @media (min-width:1000px){
+                                flex-direction: column;
+                                justify-content: center;
+                                padding:2em;
+                            }
                         p{
                             font-weight:700;
                         }
@@ -181,6 +180,10 @@ header{
                     font-size: 1.2em;
                     margin:auto 1em auto .5em;
                     color:$typo-color-light;
+                            @media (min-width:1000px){
+                                margin:0 auto 0 auto;
+                                font-size:1.5em;
+                            }
                 }
                 &__number{
                     display:flex;
@@ -190,6 +193,10 @@ header{
                     height:1.5em;
                     background:$cta-color;
                     transform: translateX(-12px);
+                    @include transition-settings;
+                            @media (min-width:1000px){
+                                transform: translateX(0) translateY(-50px) scale(1.2);
+                            }
                         p{
                             color:white;
                             margin:auto;
@@ -210,33 +217,54 @@ header{
        background:$bg-color;
        width:100%;
        height:auto;
+
         #restaurant-wrap{
             display:flex;
             flex-direction: column;
-            margin:$margin-doc-dimensions;
+            margin: $margin-doc-dimensions;
+                    @media (min-width:500px) and (max-width:999px) {
+                        width:80%;
+                        max-width:500px;
+                        margin:auto;
+                    }
+                    @media (min-width:1000px) {
+                        width:80%;
+                        margin:auto;
+                    }
         }
    }
 
    #restaurant-articles-wrap{
+       width:100%;
         @media (min-width:1000px) {
             display:flex;
             flex-direction:row;
+            justify-content: space-between;
+            margin:auto auto 4em auto;
+        }
+        @media (min-width:500px) and (max-width:999px){
+            display:flex;
+            flex-direction: row;
             flex-wrap: wrap;
             justify-content: space-between;
-            margin-bottom:3em;
+            margin:auto;
         }
    }
 
    .restaurant-article{
        width:100%;
+       max-width:400px;
        margin:auto;
        margin-bottom:2em;
        border-radius:1.5em;
        background: #fff;
        @include box-shadow-settings;
        overflow: hidden;
-       max-width:400px;
-            @media (min-width:1000px) {
+       @include transition-settings; 
+            &:hover{
+                transform: scale(1.05);
+            }
+            @media (min-width:1000px){
                 margin:1em;
             }
         &__link{
@@ -246,7 +274,7 @@ header{
         }
         &__img{
             width:100%;
-            max-height:170px;
+            height:170px;
             object-fit: cover;
         }
         &__typo-wrap{
@@ -264,7 +292,18 @@ header{
             text-align: center;
             align-self: center;
             font-size:1.5em;
-            background:red;
+            color:rgb(255, 255, 255);
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: rgb(0, 0, 0);
+            @include transition-settings; 
+                &:hover{
+                    background: $gradient-cta;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    -webkit-text-stroke-width: 1px;
+                    -webkit-text-stroke-color: rgba(0, 0, 0, 0);
+                    cursor:pointer;
+                }
         }
         &__new{
             font-size:.9em;
@@ -278,53 +317,4 @@ header{
         }
    }
 
-   footer{
-    background:darken($typo-color-light, 5%);
-   }
 
-    #logo-footer{
-        font-family:$typo-title;
-                    font-size:1.2em;
-                    margin-bottom:1em;
-    }
-
-    .footer-content{
-        margin:0;
-        padding:2em;
-        color:$bg-color;
-            p{
-                margin:0;
-
-            }
-            a{
-                margin-bottom:.5em;
-                text-decoration: none;
-                color:$bg-color;
-            }
-            &__link{
-                display:flex;
-                font-weight: 700;
-            }
-            &__icon{
-                width:1.2em;
-                margin:auto .5em auto 0;
-            }
-    }
-
-    #icon-rotate{
-        transform: rotate(-30deg);
-    }
-
-    .inactive{
-        display:none;
-    }
-
-   button{
-       font-size:1em;
-       font-weight:700;
-       color:white;
-       background:linear-gradient($cta-color-light, $cta-color);
-       padding:1.1em;
-       border-radius: 2em;
-       border:none;
-   }
