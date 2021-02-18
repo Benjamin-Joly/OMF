@@ -1,12 +1,13 @@
 header{
+    position:fixed;
     background: rgb(255, 255, 255);
     width:100%;
     height:auto;
     padding:1em 0 .3em 0;
-    position:relative;
     z-index:10;
     box-shadow: 0 1px 5px lighten($typo-color-light,40%);
         #header-wrap{
+            position:relative;
             display:flex;
             justify-content:space-between;
             .header-arrow{
@@ -97,3 +98,58 @@ footer{
                  cursor:pointer;
              }
     }
+
+    @keyframes anim-like{
+        0%{
+            transform:scale(0);
+        }
+        100%{
+            transform:scale(1.5);
+        }
+    }
+    
+    .like-icon{
+        &__wrap{
+            margin:auto;
+            position:relative;
+            width:50px;
+            height:50px;
+            filter: drop-shadow(0 0 5px rgb(116, 116, 116));
+            overflow:hidden;
+            transition:all ease-in-out .2s;
+        }
+        &__clip{
+            position:absolute;
+            width:50px;
+            height:50px;
+            background:#fff;
+            clip-path: path('M26,9.77c9.48-20.36,34.1-.91,21.43,16.71-3.74,4.67-7.71,9.08-11.59,13.61-2.87,3.34-5.77,6.64-8.59,10-.88,1.06-1.46,1.23-2.44.08-6.64-7.79-13.41-15.44-20-23.29C-8.42,9.38,16.14-11,26,9.77Z');
+            transform: scale(.5);
+            overflow:hidden;
+            transition:all ease-in-out .5s;
+        }
+        &__first-color{
+            position:absolute;
+            width:50px;
+            height:50px;
+            background:#ff79da;
+            overflow:hidden;
+            clip-path: path('M25,8.77c9.48-20.36,34.1-.91,21.43,16.71-3.74,4.67-7.71,9.08-11.59,13.61-2.87,3.34-5.77,6.64-8.59,10-.88,1.06-1.46,1.23-2.44.08-6.64-7.79-13.41-15.44-20-23.29C-9.42,8.38,15.14-12,25,8.77Z');
+            display:flex;
+            transform: scale(0);
+            transform-origin: center;
+            transition:.5s ease-in-out;
+        }
+        &__gradient{
+            width:100%;
+            height:100%;
+            margin:auto;
+            border-radius: 50%;
+            background:linear-gradient(#ff79da, #9356dc);
+            overflow:hidden;
+            transform: scale(0);
+            transition:.5s ease-in-out;
+        }
+    }
+    
+    

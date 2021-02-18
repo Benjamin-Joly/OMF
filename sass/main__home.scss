@@ -46,6 +46,7 @@
                 background-image: url('/ressources/images/restaurants/la-palette-du-gout_jay-wennington-N_Y88TWmGwA-unsplash.jpg');
                 background-color: lighten($typo-color-light,10%);
                 background-blend-mode: lighten;
+                background-attachment: fixed;
                 background-size: cover;
             }
             @media (min-width:1000px) and (max-width:1200px){
@@ -106,7 +107,7 @@
        margin-top:4em;
        margin-bottom:4em;
             @media (min-width:1000px){
-                background: $pattern-tuto;
+                background: #fff;
                 background-size: 6px 6px;
                 background-position: 50px 50px;
                 margin:auto;
@@ -154,6 +155,7 @@
             padding:.5em 0 .5em 0;
             @include transition-settings;
             @media (min-width:1000px){
+                background:$cta-color;
                 &:hover .tuto-article__number{
                     transform-origin: center;
                     transform: translateX(0) translateY(-55px) scale(1.5);
@@ -164,9 +166,13 @@
                     text-decoration: none;
                     color:$typo-color;
                             @media (min-width:1000px){
+                                color:$bg-color;
                                 flex-direction: column;
                                 justify-content: center;
                                 padding:2em;
+                                    &:hover{
+                                        color:$typo-color-light;
+                                    }
                             }
                         p{
                             font-weight:700;
@@ -181,6 +187,7 @@
                     margin:auto 1em auto .5em;
                     color:$typo-color-light;
                             @media (min-width:1000px){
+                                color:$bg-color;
                                 margin:0 auto 0 auto;
                                 font-size:1.5em;
                             }
@@ -196,6 +203,7 @@
                     @include transition-settings;
                             @media (min-width:1000px){
                                 transform: translateX(0) translateY(-50px) scale(1.2);
+                                background:$typo-color-light;
                             }
                         p{
                             color:white;
@@ -217,7 +225,9 @@
        background:$bg-color;
        width:100%;
        height:auto;
-
+            @media (min-width:1000px) {
+                background:$bg-color;
+            }
         #restaurant-wrap{
             display:flex;
             flex-direction: column;
@@ -236,13 +246,13 @@
 
    #restaurant-articles-wrap{
        width:100%;
-        @media (min-width:1000px) {
+        @media (min-width:1200px) {
             display:flex;
             flex-direction:row;
             justify-content: space-between;
             margin:auto auto 4em auto;
         }
-        @media (min-width:500px) and (max-width:999px){
+        @media (min-width:500px) and (max-width:1200px){
             display:flex;
             flex-direction: row;
             flex-wrap: wrap;
@@ -253,7 +263,7 @@
 
    .restaurant-article{
        width:100%;
-       max-width:400px;
+       max-width:300px;
        margin:auto;
        margin-bottom:2em;
        border-radius:1.5em;
@@ -290,34 +300,28 @@
                     margin:0;
                 }
         }
-        &__bg-icon{
-            align-self: center;
-            background:$gradient-cta;
-            margin-right:1.5em;
-            width:60px;
-            height:60px;
-            clip-path: circle();
-            transform: scale(0.5) translateY(100px);
-            @include transition-settings; 
+        &__icon-wrap{
+            margin:auto 2em auto auto;
+            border-radius:100%;
+            display:flex;
+            background:$bg-color;
+            @include transition-settings;
+                    &:hover .like-icon__first-color{
+                        animation: anim-like .4s ease-in-out forwards;
+                    }
+                    &:hover .like-icon__gradient{
+                        animation: anim-like .5s ease-in-out .2s forwards;
+                    }
+                    &:hover .like-icon__wrap{
+                        filter: drop-shadow(0 0 10px $bg-color);
+                    }
+                    &:hover{
+                        cursor:pointer;
+                        transform: scale(1.2);
+                        background:white;
+                    }
         }
-        &__icon{
-            flex:1;
-            text-align: center;
-            align-self: center;
-            font-size:1.5em;
-            color:rgb(255, 255, 255);
-            -webkit-text-stroke-width: 1px;
-            -webkit-text-stroke-color: rgb(0, 0, 0);
-            @include transition-settings; 
-                &:hover{
-                    background: $gradient-cta;
-                    -webkit-background-clip: text;
-                    -webkit-text-fill-color: transparent;
-                    -webkit-text-stroke-width: 1px;
-                    -webkit-text-stroke-color: rgba(0, 0, 0, 0);
-                    cursor:pointer;
-                }
-        }
+        
         &__new{
             font-size:.9em;
             font-weight:700;

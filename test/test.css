@@ -21,63 +21,53 @@ body{
     }
 }
 
-.heart-over-wrap{
+.like-icon__wrap{
     position:relative;
     width:50px;
     height:50px;
-    display:flex;
-    align-items:center;
-    justify-content: center;
-    filter: drop-shadow(0 0 4px rgb(160, 160, 160));
-
+    filter: drop-shadow(0 0 4px rgba(141, 141, 141, 0.63));
+    transition:all ease-in-out .5s;
 }
 
-.heart-wrap{
+.like-icon__clip{
     position:absolute;
     width:52px;
     height:52px;
     background:#fff;
     clip-path: path('M26,9.77c9.48-20.36,34.1-.91,21.43,16.71-3.74,4.67-7.71,9.08-11.59,13.61-2.87,3.34-5.77,6.64-8.59,10-.88,1.06-1.46,1.23-2.44.08-6.64-7.79-13.41-15.44-20-23.29C-8.42,9.38,16.14-11,26,9.77Z');
-    display:flex;
-    align-items:center;
-    transform: scale(0.5);
-    justify-content: center;
-    transform-origin: center;
-    overflow:hidden;
+    transform: scale(.5);
     transition:all ease-in-out .5s;
 }
 
-.heart-bg-color{
+.like-icon__first-color{
     position:absolute;
     width:50px;
     height:50px;
     background:#ff79da;
     clip-path: path('M25,8.77c9.48-20.36,34.1-.91,21.43,16.71-3.74,4.67-7.71,9.08-11.59,13.61-2.87,3.34-5.77,6.64-8.59,10-.88,1.06-1.46,1.23-2.44.08-6.64-7.79-13.41-15.44-20-23.29C-9.42,8.38,15.14-12,25,8.77Z');
     display:flex;
-    align-items:center;
-    justify-content: center;
     transform: scale(0);
-    transform-origin: center;
-    overflow:hidden;
     transition:.5s ease-in-out;
 }
 
-.heart-bg-animation{
+.like-icon__gradient{
     width:100%;
     height:100%;
     margin:auto;
     border-radius: 50%;
     background:linear-gradient(#ff79da, #9356dc);
     transform: scale(0);
-    transform-origin: center;
-    overflow:hidden;
     transition:.5s ease-in-out;
 }
 
-.heart-wrap:hover .heart-bg-color{
+.like-icon__clip:hover .like-icon__first-color{
     animation: anim-like .5s ease-in-out forwards;
 }
 
-.heart-wrap:hover .heart-bg-animation{
+.like-icon__clip:hover .like-icon__gradient{
     animation: anim-like .6s ease-in-out .2s forwards;
+}
+
+.like-icon__clip:hover{
+    cursor:pointer;
 }
