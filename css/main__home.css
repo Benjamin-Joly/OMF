@@ -5,6 +5,7 @@
 body, html {
   margin: 0;
   padding: 0;
+  background: transparent;
 }
 
 html {
@@ -57,6 +58,7 @@ header #header-wrap #logo {
 
 footer {
   background: #404040;
+  z-index: 100;
 }
 
 #logo-footer {
@@ -171,13 +173,45 @@ button:hover {
   }
 }
 
+.heart-icon-wrap {
+  margin: auto 2em auto auto;
+  border-radius: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: transparent;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.heart-icon-wrap:hover .like-icon__first-color {
+  -webkit-animation: anim-like .4s ease-in-out forwards;
+          animation: anim-like .4s ease-in-out forwards;
+}
+
+.heart-icon-wrap:hover .like-icon__gradient {
+  -webkit-animation: anim-like .5s ease-in-out .2s forwards;
+          animation: anim-like .5s ease-in-out .2s forwards;
+}
+
+.heart-icon-wrap:hover .like-icon__wrap {
+  -webkit-filter: drop-shadow(0 0 10px #f2f2f2);
+          filter: drop-shadow(0 0 10px #f2f2f2);
+}
+
+.heart-icon-wrap:hover {
+  cursor: pointer;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
 .like-icon__wrap {
   margin: auto;
   position: relative;
   width: 50px;
   height: 50px;
-  -webkit-filter: drop-shadow(0 0 5px #747474);
-          filter: drop-shadow(0 0 5px #747474);
+  -webkit-filter: drop-shadow(0 0 5px #b9b9b9);
+          filter: drop-shadow(0 0 5px #b9b9b9);
   overflow: hidden;
   -webkit-transition: all ease-in-out .2s;
   transition: all ease-in-out .2s;
@@ -288,12 +322,16 @@ main {
         grid-template-columns: repeat(12, 1fr);
     -ms-grid-rows: (1fr)[4];
         grid-template-rows: repeat(4, 1fr);
-    height: 90vh;
+    background-size: cover;
+  }
+}
+
+@media (min-width: 1000px) {
+  #bloc-exploration {
     background-image: url("/ressources/images/restaurants/la-palette-du-gout_jay-wennington-N_Y88TWmGwA-unsplash.jpg");
     background-color: #666666;
     background-blend-mode: lighten;
     background-attachment: fixed;
-    background-size: cover;
   }
 }
 
@@ -719,39 +757,6 @@ main {
 
 .restaurant-article__typo-link h3, .restaurant-article__typo-link p {
   margin: 0;
-}
-
-.restaurant-article__icon-wrap {
-  margin: auto 2em auto auto;
-  border-radius: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  background: #f2f2f2;
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
-}
-
-.restaurant-article__icon-wrap:hover .like-icon__first-color {
-  -webkit-animation: anim-like .4s ease-in-out forwards;
-          animation: anim-like .4s ease-in-out forwards;
-}
-
-.restaurant-article__icon-wrap:hover .like-icon__gradient {
-  -webkit-animation: anim-like .5s ease-in-out .2s forwards;
-          animation: anim-like .5s ease-in-out .2s forwards;
-}
-
-.restaurant-article__icon-wrap:hover .like-icon__wrap {
-  -webkit-filter: drop-shadow(0 0 10px #f2f2f2);
-          filter: drop-shadow(0 0 10px #f2f2f2);
-}
-
-.restaurant-article__icon-wrap:hover {
-  cursor: pointer;
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
-  background: white;
 }
 
 .restaurant-article__new {

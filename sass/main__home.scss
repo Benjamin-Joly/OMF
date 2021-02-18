@@ -38,16 +38,12 @@
        display: flex;
        min-height: 300px;
        background: $bg-color;
+       @include head-img-desktop-settings;
             @media (min-width:1000px){
-                display: grid;
-                grid-template-columns: repeat(12, 1fr);
-                grid-template-rows: repeat(4, 1fr);
-                height: 90vh;   
                 background-image: url('/ressources/images/restaurants/la-palette-du-gout_jay-wennington-N_Y88TWmGwA-unsplash.jpg');
                 background-color: lighten($typo-color-light,10%);
                 background-blend-mode: lighten;
                 background-attachment: fixed;
-                background-size: cover;
             }
             @media (min-width:1000px) and (max-width:1200px){
                 height: 50vh;   
@@ -299,27 +295,6 @@
                 h3, p{
                     margin:0;
                 }
-        }
-        &__icon-wrap{
-            margin:auto 2em auto auto;
-            border-radius:100%;
-            display:flex;
-            background:$bg-color;
-            @include transition-settings;
-                    &:hover .like-icon__first-color{
-                        animation: anim-like .4s ease-in-out forwards;
-                    }
-                    &:hover .like-icon__gradient{
-                        animation: anim-like .5s ease-in-out .2s forwards;
-                    }
-                    &:hover .like-icon__wrap{
-                        filter: drop-shadow(0 0 10px $bg-color);
-                    }
-                    &:hover{
-                        cursor:pointer;
-                        transform: scale(1.2);
-                        background:white;
-                    }
         }
         
         &__new{

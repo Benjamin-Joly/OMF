@@ -85,4 +85,112 @@
   -webkit-transition: .5s ease-in-out;
   transition: .5s ease-in-out;
 }
+
+.loader-type__wrap {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: 'Shrikhand';
+  font-size: 5em;
+  z-index: 10;
+}
+
+.loader-type__character {
+  display: block;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  color: #00ff73;
+  -webkit-animation: anim-loader 1100ms forwards infinite alternate;
+          animation: anim-loader 1100ms forwards infinite alternate;
+}
+
+.loader-type__character--1 {
+  -webkit-animation-delay: 137.5ms;
+          animation-delay: 137.5ms;
+}
+
+.loader-type__character--2 {
+  -webkit-animation-delay: 275ms;
+          animation-delay: 275ms;
+}
+
+.loader-type__character--3 {
+  -webkit-animation-delay: 412.5ms;
+          animation-delay: 412.5ms;
+}
+
+.loader-type__character--4 {
+  -webkit-animation-delay: 550ms;
+          animation-delay: 550ms;
+}
+
+.loader-type__character--5 {
+  -webkit-animation-delay: 687.5ms;
+          animation-delay: 687.5ms;
+}
+
+.loader-type__character--6 {
+  -webkit-animation-delay: 825ms;
+          animation-delay: 825ms;
+}
+
+.loader-type__character--7 {
+  -webkit-animation-delay: 962.5ms;
+          animation-delay: 962.5ms;
+}
+
+.loader-type__character--8 {
+  -webkit-animation-delay: 1100ms;
+          animation-delay: 1100ms;
+}
+
+@-webkit-keyframes anim-loader {
+  0% {
+    -webkit-transform: scaleY(0.5);
+            transform: scaleY(0.5);
+  }
+  100% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+    color: #070066;
+  }
+}
+
+@keyframes anim-loader {
+  0% {
+    -webkit-transform: scaleY(0.5);
+            transform: scaleY(0.5);
+  }
+  100% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+    color: #070066;
+  }
+}
+
+@-webkit-keyframes anim-circle {
+  0% {
+    -webkit-transform: translateX(-170px);
+            transform: translateX(-170px);
+  }
+  100% {
+    -webkit-transform: translateX(170px);
+            transform: translateX(170px);
+  }
+}
+
+@keyframes anim-circle {
+  0% {
+    -webkit-transform: translateX(-170px);
+            transform: translateX(-170px);
+  }
+  100% {
+    -webkit-transform: translateX(170px);
+            transform: translateX(170px);
+  }
+}
 /*# sourceMappingURL=test-like-icon.css.map */

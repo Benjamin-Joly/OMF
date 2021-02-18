@@ -5,5 +5,86 @@
 ///////////////////////////////////////////////règleRestaurant
 
 main{
-    height:100vh;
+    background:$bg-color;
+}
+
+
+#bg-img-head-wrap{
+    width:100%;
+    height:100%;
+    min-height:300px;
+    background-image: url(/ressources/images/restaurants/a-la-francaise_toa-heftiba-DQKerTsQwi0-unsplash.jpg);
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin:0;
+    @include head-img-desktop-settings;
+        @media (min-width:1000px){
+            height: 70vh; 
+            background-position: bottom;
+        }
+}
+
+#menu{
+    position:relative;
+    top:-7em;
+    width:100%;
+    border-top-left-radius: 1.5em;
+    border-top-right-radius: 1.5em;
+    background:$bg-color;
+}
+
+#menu-wrap{
+    padding:1.5em;
+}
+
+.menu{
+    &__section-title{
+        font-size:1.2em;
+        font-weight:300;
+        margin-bottom:0.2em;
+    }
+    &__underline-stroke{
+        height:3px;
+        width:3em;
+        background:$contrast-color;
+    }
+}
+
+#like-restaurant{
+    margin:0;
+}
+
+.heading-wrap{
+    display:flex;
+    justify-content: space-between;
+}
+
+h1{
+    font-family:'Shrikhand';
+    font-size:1.8em;
+    color:$typo-color;
+    margin:0;
+}
+
+.meal{
+    @include box-shadow-settings;
+    background: white;
+    border-radius:1em;
+    padding:1em;
+    margin:1em 0 1em 0;
+    display:flex;
+    justify-content:space-between;
+    flex-wrap: wrap;
+        &__name{
+            width:100%;
+            margin:.2em 0 .2em 0;
+        }
+        &__descr{
+            margin:auto 0 auto 0;
+        }
+        &__price{
+            font-weight:900;
+            margin:auto 0 auto 0;
+        }
 }

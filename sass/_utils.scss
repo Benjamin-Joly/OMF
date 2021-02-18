@@ -21,3 +21,12 @@ $gradient-cta:linear-gradient($cta-color-light, $cta-color);
 @mixin transition-settings{
     transition: all .2s ease-in-out; 
 }
+
+@mixin head-img-desktop-settings {
+    @media (min-width:1000px){
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: repeat(4, 1fr);  
+        background-size: cover;
+    }
+}

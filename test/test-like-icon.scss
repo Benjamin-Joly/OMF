@@ -53,4 +53,48 @@
         transition:.5s ease-in-out;
     }
 }
+///////////////////////////////////
 
+$anim-dur:1100ms;
+$num-characters:8;
+$anim-delay: $anim-dur / $num-characters;
+
+.loader-type{
+    &__wrap{
+        position:relative;
+        display:flex;
+        align-items:center;
+        font-family: 'Shrikhand';
+        font-size:5em;
+        z-index:10;
+    }    
+    &__character{
+        display:block;
+        transition:all .5s;
+        color:rgb(0, 255, 115);
+        animation: anim-loader $anim-dur forwards infinite alternate;
+            @for $i from 1 through $num-characters {
+                &--#{$i} {
+                    animation-delay: $anim-delay * $i;
+                }
+            }
+    }    
+}
+
+@keyframes anim-loader{
+    0%{
+        transform: scaleY(.5); 
+    }
+    100%{
+        transform: scaleY(1);
+        color:rgb(7, 0, 102);
+    }
+}
+@keyframes anim-circle{
+    0%{
+        transform: translateX(-170px);
+    }
+    100%{
+        transform: translateX(170px);
+    }
+}
