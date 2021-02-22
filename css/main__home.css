@@ -52,8 +52,43 @@ header #header-wrap #logo {
 }
 
 #header-arrow {
+  position: absolute;
+  z-index: 2;
+  top: .2em;
+  left: 3em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   text-decoration: none;
   color: black;
+  background: #f2f2f2;
+  border-radius: 100%;
+  width: 2em;
+  height: 2em;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+@media (max-width: 330px) {
+  #header-arrow {
+    left: .5em;
+  }
+}
+
+#header-arrow:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.header-arrow-icon {
+  margin: auto;
+  font-size: 1.5em;
 }
 
 footer {
@@ -262,6 +297,142 @@ button:hover {
           transform: scale(0);
   -webkit-transition: .5s ease-in-out;
   transition: .5s ease-in-out;
+}
+
+.loader-type__wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  background: #f2f2f2;
+  -webkit-animation: display-loader 3000ms forwards;
+          animation: display-loader 3000ms forwards;
+}
+
+.loader-type__character {
+  font-family: 'Shrikhand';
+  font-size: 5em;
+  display: block;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  color: #99e2d0;
+  -webkit-animation: anim-loader 1100ms both 3 alternate;
+          animation: anim-loader 1100ms both 3 alternate;
+}
+
+.loader-type__character--1 {
+  -webkit-animation-delay: 137.5ms;
+          animation-delay: 137.5ms;
+}
+
+.loader-type__character--2 {
+  -webkit-animation-delay: 275ms;
+          animation-delay: 275ms;
+}
+
+.loader-type__character--3 {
+  -webkit-animation-delay: 412.5ms;
+          animation-delay: 412.5ms;
+}
+
+.loader-type__character--4 {
+  -webkit-animation-delay: 550ms;
+          animation-delay: 550ms;
+}
+
+.loader-type__character--5 {
+  -webkit-animation-delay: 687.5ms;
+          animation-delay: 687.5ms;
+}
+
+.loader-type__character--6 {
+  -webkit-animation-delay: 825ms;
+          animation-delay: 825ms;
+}
+
+.loader-type__character--7 {
+  -webkit-animation-delay: 962.5ms;
+          animation-delay: 962.5ms;
+}
+
+.loader-type__character--8 {
+  -webkit-animation-delay: 1100ms;
+          animation-delay: 1100ms;
+}
+
+@media (max-width: 800px) {
+  .loader-type__character {
+    font-size: 3em;
+  }
+}
+
+@-webkit-keyframes anim-loader {
+  0% {
+    -webkit-transform: scaleY(0.5);
+            transform: scaleY(0.5);
+  }
+  100% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+    color: #9356dc;
+  }
+}
+
+@keyframes anim-loader {
+  0% {
+    -webkit-transform: scaleY(0.5);
+            transform: scaleY(0.5);
+  }
+  100% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+    color: #9356dc;
+  }
+}
+
+@-webkit-keyframes display-loader {
+  0% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 0;
+    width: 100vw;
+  }
+  100% {
+    opacity: 0;
+    width: 0;
+  }
+}
+
+@keyframes display-loader {
+  0% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 0;
+    width: 100vw;
+  }
+  100% {
+    opacity: 0;
+    width: 0;
+  }
 }
 
 h2 {

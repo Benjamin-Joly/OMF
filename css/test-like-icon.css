@@ -104,8 +104,8 @@
   -webkit-transition: all .5s;
   transition: all .5s;
   color: #00ff73;
-  -webkit-animation: anim-loader 1100ms forwards infinite alternate;
-          animation: anim-loader 1100ms forwards infinite alternate;
+  -webkit-animation: anim-loader 1100ms both infinite alternate;
+          animation: anim-loader 1100ms both infinite alternate;
 }
 
 .loader-type__character--1 {

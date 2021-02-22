@@ -72,7 +72,7 @@ $anim-delay: $anim-dur / $num-characters;
         display:block;
         transition:all .5s;
         color:rgb(0, 255, 115);
-        animation: anim-loader $anim-dur forwards infinite alternate;
+        animation: anim-loader $anim-dur both infinite alternate;
             @for $i from 1 through $num-characters {
                 &--#{$i} {
                     animation-delay: $anim-delay * $i;
