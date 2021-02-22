@@ -40,7 +40,7 @@
        background: $bg-color;
        @include head-img-desktop-settings;
             @media (min-width:1000px){
-                background-image: url('/ressources/images/restaurants/la-palette-du-gout_jay-wennington-N_Y88TWmGwA-unsplash.jpg');
+                background-image: url('ressources/images/restaurants/la-palette-du-gout_jay-wennington-N_Y88TWmGwA-unsplash.jpg');
                 background-color: lighten($typo-color-light,10%);
                 background-blend-mode: lighten;
                 background-attachment: fixed;

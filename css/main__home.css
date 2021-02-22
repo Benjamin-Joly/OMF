@@ -499,7 +499,7 @@ main {
 
 @media (min-width: 1000px) {
   #bloc-exploration {
-    background-image: url("/ressources/images/restaurants/la-palette-du-gout_jay-wennington-N_Y88TWmGwA-unsplash.jpg");
+    background-image: url("ressources/images/restaurants/la-palette-du-gout_jay-wennington-N_Y88TWmGwA-unsplash.jpg");
     background-color: #666666;
     background-blend-mode: lighten;
     background-attachment: fixed;
