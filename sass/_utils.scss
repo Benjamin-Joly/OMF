@@ -1,5 +1,14 @@
+/////////typo
 $typo-title:'Shrikhand';
-$margin-doc-dimensions:0 1.5em 0 1.5em;
+$bold: 900;
+$medium-bold:700;
+$regular:400;
+$thin:300;
+$small:1em;
+$small-titles:1.2em;
+$titles:1.5em;
+$big-titles:1.8em;
+//////////colors
 $typo-color:rgb(0, 0, 0);
 $typo-color-light:lighten($typo-color,30%);
 $head-info-color:lighten($typo-color,90%);
@@ -7,21 +16,12 @@ $bg-color:lighten($typo-color, 95%);
 $cta-color:#9356dc;
 $cta-color-light:#ff79da;
 $contrast-color:#99e2d0;
-$pattern-tuto:linear-gradient(45deg, $contrast-color 1%, #fff 1%, #fff 49%, $contrast-color 49%, $contrast-color 51%, #fff 51%, #fff 99%, $contrast-color 99%);
 $gradient-cta:linear-gradient($cta-color-light, $cta-color);
+///////////Layout
+$margin-doc-dimensions:0 1.5em 0 1.5em;
 .inactive{
     display:none;
 }
-
-
-@mixin box-shadow-settings{
-    box-shadow: 0 .2em 1em darken($head-info-color,5%);
-}
-
-@mixin transition-settings{
-    transition: all .2s ease-in-out; 
-}
-
 @mixin head-img-desktop-settings {
     @media (min-width:1000px){
         display: grid;
@@ -30,3 +30,15 @@ $gradient-cta:linear-gradient($cta-color-light, $cta-color);
         background-size: cover;
     }
 }
+///////////Style
+@mixin box-shadow-settings{
+    box-shadow: 0 .2em 1em darken($head-info-color,5%);
+}
+
+//////////Animations
+@mixin transition-settings{
+    transition: all .2s ease-in-out; 
+}
+
+$num-meal-starter:3;
+$anim-delay:100ms;

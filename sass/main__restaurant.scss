@@ -48,8 +48,8 @@ main{
 
 .menu{
     &__section-title{
-        font-size:1.2em;
-        font-weight:300;
+        font-size:$small-titles;
+        font-weight:$thin;
         margin-bottom:0.2em;
     }
     &__underline-stroke{
@@ -70,7 +70,7 @@ main{
 
 h1{
     font-family:'Shrikhand';
-    font-size:1.8em;
+    font-size:$big-titles;
     color:$typo-color;
     margin:0;
 }
@@ -85,9 +85,6 @@ h1{
         opacity:1;
     }
 }
-
-$num-meal-starter:3;
-$anim-delay:100ms;
 
 
 .meal{
@@ -142,12 +139,12 @@ $anim-delay:100ms;
             overflow:hidden;
         }
         &__price{
-            font-weight:900;
+            font-weight:$bold;
             text-align:right;
             justify-content:flex-end;
             align-self: flex-end;
             padding-left: .5em;
-            margin-right:1em;
+            margin-right: 1.8em;
         }
         &__bloc-valid{
             background:$contrast-color;
@@ -163,9 +160,16 @@ $anim-delay:100ms;
         &__circle-icon{
             width:3em;
             text-align: center;
-            font-size:1.5em;
+            font-size:$small-titles;
             color: #fff;
             transition:all .5s ease-in-out;
         }
 
 }
+        #order{
+            &__wrap{
+                width:100%;
+                text-align:center;
+                padding-top:2em;
+            }
+        }
