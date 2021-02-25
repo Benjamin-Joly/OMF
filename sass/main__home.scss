@@ -278,6 +278,8 @@
             text-decoration:none;
             color:$typo-color;
             position:relative;
+            display:block;
+            height:100%;
         }
         &__img{
             width:100%;
