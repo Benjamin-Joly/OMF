@@ -162,82 +162,67 @@ footer{
     
 
     .heart-icon-wrap{
-        margin:auto 2em auto auto;
+        margin:auto 1em auto 1em;
         border-radius:100%;
         display:flex;
         background:transparent;
         @include transition-settings;
-                &:hover .like-icon__first-color{
-                    animation: anim-like .4s ease-in-out forwards;
-                }
-                &:hover .like-icon__gradient{
-                    animation: anim-like .5s ease-in-out .2s forwards;
-                }
-                &:hover .like-icon__wrap{
-                    filter: drop-shadow(0 0 10px $bg-color);
-                }
-                &:hover{
-                    cursor:pointer;
-                    transform: scale(1.2);
-                }
-                &:active .like-icon__first-color{
-                    animation: anim-like .4s ease-in-out forwards;
-                }
-                &:active .like-icon__gradient{
-                    animation: anim-like .5s ease-in-out .2s forwards;
-                }
-                &:active .like-icon__wrap{
-                    filter: drop-shadow(0 0 10px $bg-color);
-                }
-                &:active{
-                    cursor:pointer;
-                    transform: scale(1.2);
-                }
     }
 
-    .like-icon{
+    .heart-icon{
         &__wrap{
-            margin:auto;
             position:relative;
-            width:50px;
-            height:50px;
-            filter: drop-shadow(0 0 5px rgb(185, 185, 185));
-            overflow:hidden;
-            transition:all ease-in-out .2s;
+            font-size:1.8em;
+            text-align:center;
+            color:rgb(255, 255, 255);
+            -webkit-text-stroke: 1px rgb(0, 0, 0);
+            transform: scale(.9, 1);
+            @include transition-settings;
+                &:hover{
+                    -webkit-text-stroke: 1px rgba(0, 0, 0, 0)
+                }
+                &:hover .heart-icon__inside--one{
+                    transform: scale(1);
+                }
+                &:hover .heart-icon__inside--two{
+                    transform: scale(1.15);
+                }
+                &:focus{
+                    -webkit-text-stroke: 1px rgba(0, 0, 0, 0)
+                }
+                &:focus .heart-icon__inside--one{
+                    transform: scale(1);
+                }
+                &:focus .heart-icon__inside--two{
+                    transform: scale(1.15);
+                }
         }
-        &__clip{
+    
+        &__inside--one{
             position:absolute;
-            width:52px;
-            height:50px;
-            background:#fff;
-            clip-path: path('M 26 9.77 C 35.48 -10.59 60.1 8.86 47.43 26.48 C 43.69 31.15 39.72 35.56 35.84 40.09 C 32.97 43.43 30.07 46.73 27.25 50.09 C 26.37 51.15 25.79 51.32 24.81 50.17 C 18.17 42.38 11.4 34.73 4.81 26.88 C -8.42 9.38 16.14 -11 26 9.77 Z');
-            transform: scale(.5);
-            overflow:hidden;
-            transition:all ease-in-out .5s;
+            color:$cta-color-light;
+            -webkit-text-stroke: $cta-color-light;
+            top:0;
+            left:0;
+            right:0;
+            bottom:0;
+            opacity: 1;
+            transform: scale(0);
+            @include transition-settings;
         }
-        &__first-color{
+        &__inside--two{
             position:absolute;
-            width:50px;
-            height:50px;
-            background:#ff79da;
-            overflow:hidden;
-            clip-path: path('M 25 8.77 C 34.48 -11.59 59.1 7.86 46.43 25.48 C 42.69 30.15 38.72 34.56 34.84 39.09 C 31.97 42.43 29.07 45.73 26.25 49.09 C 25.37 50.15 24.79 50.32 23.81 49.17 C 17.17 41.38 10.4 33.73 3.81 25.88 C -9.42 8.38 15.14 -12 25 8.77 Z');
-            display:flex;
+            color:$cta-color;
+            -webkit-text-stroke: 1px rgba(0, 0, 0, 0);
+            top:0;
+            left:0;
+            right:0;
+            bottom:0;
+            opacity: 1;
             transform: scale(0);
-            transform-origin: center;
-            transition:.5s ease-in-out;
+            transition:all .3s ease-in-out .2s;
         }
-        &__gradient{
-            width:100%;
-            height:100%;
-            margin:auto;
-            border-radius: 50%;
-            background:linear-gradient(#ff79da, #9356dc);
-            overflow:hidden;
-            transform: scale(0);
-            transition:.5s ease-in-out;
-        }
-    }
+}
     
     $anim-dur:1100ms;
     $num-characters:8;
